@@ -30,4 +30,10 @@ Abaixo, imagens das respectivas tabelas antes de ser transformada em csv:
 
 
 # Coleta
-Dados baixados para a máquina local e inseridos manualmente em um bucket do Google Cloud
+Dados baixados para a máquina local e inseridos manualmente em um bucket (mvpgee) do Google Cloud
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/6de4291d-0656-4c6c-9616-afc561fc098f)
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/17685acd-dfe3-4266-8b4d-ee8b6fb14024)
+
+# Modelagem
