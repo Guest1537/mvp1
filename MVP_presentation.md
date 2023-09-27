@@ -39,9 +39,11 @@ Dados baixados para a máquina local e inseridos manualmente em um bucket (mvpge
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6de4291d-0656-4c6c-9616-afc561fc098f)
 
-![image](https://github.com/Guest1537/mvp1/assets/143922275/17685acd-dfe3-4266-8b4d-ee8b6fb14024)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/41f37f5a-8c27-499e-92b4-be8fbd180670)
 
-Upload para o bucket (mvpgee) utilizando o terminal Cloud Shell
+Exemplo de upload para o bucket (mvpgee) utilizando o terminal Cloud Shell
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/af18d1bc-0470-42c6-b335-6e3b3ee25c36)
 
 
 
