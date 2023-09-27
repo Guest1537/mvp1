@@ -19,9 +19,11 @@ Arquivo também disponível para download em: https://docs.google.com/spreadshee
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/17d74460-10aa-404b-ae53-f958789608b0)
 
 Criação de tabelas individuais:
-Dados de Atividade BR -> !T.Dados de Atividade BR csv
-Dados de Atividade UF -> !T.Dados de Atividade UF csv
-Dados Mudanças de Uso da Terra -> !T.Dados Mudancas de Uso da Terra csv
+Dados de Atividade BR -> Dados.de.atividades.BR - link para download do google drive: https://drive.google.com/file/d/1v2n61Z0ohyJr4eVc9iFx-fNKp4mdAIBE/view?usp=drive_link
+
+Dados de Atividade UF -> Dados.de.atividade.UF - link para download do google drive: https://drive.google.com/file/d/12wLLh8iTZx-zahf_qrM8qbJrYO08s_c1/view?usp=drive_link
+
+Dados Mudanças de Uso da Terra -> Dados.mudancas.de.uso.de.terra - link para download do google drive: https://drive.google.com/file/d/1h1NAL4hrh0KdyzYUmqFLnySVH31eKJY2/view?usp=drive_link
 
 Abaixo, imagens das respectivas tabelas antes de ser transformada em csv:
 
@@ -38,6 +40,11 @@ Dados baixados para a máquina local e inseridos manualmente em um bucket (mvpge
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6de4291d-0656-4c6c-9616-afc561fc098f)
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/17685acd-dfe3-4266-8b4d-ee8b6fb14024)
+
+Upload para o bucket (mvpgee) utilizando o terminal Cloud Shell
+
+
+
 
 # Modelagem
 
