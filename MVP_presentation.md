@@ -14,7 +14,9 @@ Em: TABELA DE DADOS DE ATIVIDADE - BRASIL E ESTADOS (SEEG10) e DOWNLOAD DA TABEL
 
 Em 26/09/2023 às 21:23 o link para download da tabela selecionada no site estava quebrado.
 Arquivos também disponíveis para download em: 
+
 https://docs.google.com/spreadsheets/d/1Qby5NARoUhZdUbmauSw5sHaVK6qnRKjM/edit?usp=sharing&ouid=117863055539952818718&rtpof=true&sd=true 
+
 https://docs.google.com/spreadsheets/d/1p2_P_Jn47gnI_4w_ZRjQ-V5pSVMM93zq/edit?usp=drive_link&ouid=117863055539952818718&rtpof=true&sd=true
 
 
@@ -149,9 +151,21 @@ GEEBrasil csv.csv - Dados de Emissões de Gases de Efeito Estufa no Brasil
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/b67ae324-672a-4c25-ba18-34d09c6b7818)
 
 
+
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/202f9aa6-cc4e-4fcc-86a5-e875d5a96c4d)
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/af28bdf1-c1e0-4132-90a2-019d7dcef0a0)
+
+At_BR - Tabela Dados de Atividade BR
+
+At_UF - Tabela Dados de Atividade UF
+
+GE_MUT - Dados Mudanças de Uso da Terra
+
+GE_BR - Dados de Emissões de Gases de Efeito Estufa no Brasil
+
+GE_UF - Foi selecionada amostra de outra tabela disponível pelo SEEG, referente à emissão por UF, mas seu volume de dados e os gastos com espaço alocado foram contra o uso dela para análises na íntegra.
+
 
 Para algumas tabelas foi necessário editar os dados manualmente devido à leitura dos valores de emissão de GEEs dos respectivos anos serem em STRING em vez de NUMERIC ou FLOAT64. Foi utilizada a seção "Esquema" para tal.
 
@@ -171,7 +185,7 @@ Foram realizadas alterações no Job entre os testes.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/3d4a8a70-c867-44bd-a60c-1536e0f7db75)
 
-A última versão tentava (1) excluir a coluna "Territorio", (2-53) alterar os registros das emissões dos anos na tabela GEE_Brasil de STRING para FLOAT, (54) filtrar a coluna "Emiss_o_Remo__o_Bunker" para mostrar apenas casos de emissões e filtrar a coluna "Nivel1_Setor" para mostras apenas os casos de emissões referentes a "Resíduos".
+A última versão tentativa (1) excluir a coluna "Territorio", (2-53) alterar os registros das emissões dos anos na tabela GEE_Brasil de STRING para FLOAT, (54) filtrar a coluna "Emiss_o_Remo__o_Bunker" para mostrar apenas casos de emissões e (55) filtrar a coluna "Nivel1_Setor" para mostras apenas os casos de emissões referentes a "Resíduos".
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/24390b17-718a-479f-b66c-6316c56c9736)
 
@@ -190,10 +204,73 @@ A única alteração nesse caso foi a alteção manual do tipo de variável refe
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/f0463128-90ed-46e2-a345-780145db49e2)
 
+
 # Análise
+
+Tendo em vista o insucesso das tentativas com o Cloud Data Fusion (maiores informações na parte de autocrítica), foram realizadas consultas através do Big Query > Espaço de trabalho SQL, com BI gerada através da]o Looker Studio.
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/ae56fce3-4424-45f2-8656-12c58822d7ba)
+
+SUMÁRIO CONSULTAS
+01. CONSULTA_TOPMUT_ANO
+02. COUNT GE Ano
+03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA
+04. CREATE_TABLE_ATBR+UF
+05. CREATE_TABLE_TOP10EMISS_ANO
+06. CreateViewAtBRTop1000Valores
+07. INSERTINTO_TABLE_TOP_10_GEE_ANO
+08. JOIN BASICO
+09. JOIN_GEEBR ATBR
+10. Maiores emissões BR 70-21 DESC
+11. Potencial - a consulta não foi finalizada, então não será apresentada;
+12. QtdEmissoes_AnoBioma
+13. TOP 1000EMISSOES MUT_MAISREPRESENTATIVOS
+14. TopProducaoPorSetorSeriaHistorica
+
+As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema" .
+
 
 Qualidade dos dados
 
 # Solução do problema
 
+01. CONSULTA_TOPMUT_ANO
 
+
+02. COUNT GE Ano
+
+
+03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA
+
+
+04. CREATE_TABLE_ATBR+UF
+
+
+05. CREATE_TABLE_TOP10EMISS_ANO
+
+
+06. CreateViewAtBRTop1000Valores
+
+
+07. INSERTINTO_TABLE_TOP_10_GEE_ANO
+
+
+08. JOIN BASICO
+
+
+09. JOIN_GEEBR ATBR
+
+
+10. Maiores emissões BR 70-21 DESC
+
+
+11. Potencial - a consulta não foi finalizada, então não será apresentada;
+
+
+12. QtdEmissoes_AnoBioma
+
+
+13. TOP 1000EMISSOES MUT_MAISREPRESENTATIVOS
+
+
+14. TopProducaoPorSetorSeriaHistorica
