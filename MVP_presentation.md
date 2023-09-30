@@ -118,15 +118,77 @@ Dados de Emissões de Gases de Efeito Estufa no Brasil
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/b385c517-a503-4e77-8f25-edfdef08e7b5)
 
 Nivel1_Setor - Especificação do setor emissor/removedor entre "Processos Industriais", "Energia", "Mudança de Uso da Terra e Florestas", "Agropecuparia" e "Resíduos"
+
 Nivel2, Nivel3, Nivel4, Nivel5 e Nivel6 - Especificação da atividade emissora/removedora de GEE. Caso não haja descrição específica da atividade a partir do Nivel2 o registro será NULL ou como célula vazia.
+
 Emissao_Remocao_Bunker - Classificação à qual o GEE se refere entre "Emissão", "Remoção", "Emissão NCl", "Remoção NCl" e Bunker
+
 Gas - Tipo de GEE a que se faz referência
+
 AtividadeEconomica - Atividade econômica à qual a emissão/remoção de GEE faz referência
+
 Produto - Produto ao qual a emissão/remição de GEE faz referência
+
 a1970-a2021 - Valor de emissão/remoção/bunker de GEE para o respectivo ano
 
 
 # Carga
+
+O ETL foi realizado utilizando o sistema Google Cloud Storage. Foram realizadas cargas de duas maneiras, criando buckets no Cloud Storage e cargas manuais de tabelas para o Big Query:
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/0b8bd6df-3e73-425d-bd32-b339bb4a95a6)
+
+Dados.de.atividade.BR.csv - Tabela Dados de Atividade BR
+
+Dados.de.atividade.UF.csv - Tabela Dados de Atividade UF
+
+Dados.mudancas.de.uso.da.terra.csv - Dados Mudanças de Uso da Terra
+
+GEEBrasil csv.csv - Dados de Emissões de Gases de Efeito Estufa no Brasil
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/b67ae324-672a-4c25-ba18-34d09c6b7818)
+
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/202f9aa6-cc4e-4fcc-86a5-e875d5a96c4d)
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/af28bdf1-c1e0-4132-90a2-019d7dcef0a0)
+
+Para algumas tabelas foi necessário editar os dados manualmente devido à leitura dos valores de emissão de GEEs dos respectivos anos serem em STRING em vez de NUMERIC ou FLOAT64. Foi utilizada a seção "Esquema" para tal.
+
+Foi criada a "Instancia1"
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/b45b6e18-fb90-4efa-80ce-f07a15ca4a94)
+
+Foram testados alguns Jobs para execução, mas sem sucesso.
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/fb7feb9c-07f7-4b19-b206-86e0c9f0a386)
+
+Os testes mais relevantes foram MVPv2 e MVPv3:
+
+  - MVP2
+
+Foram realizadas alterações no Job entre os testes.
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/3d4a8a70-c867-44bd-a60c-1536e0f7db75)
+
+A última versão tentava (1) excluir a coluna "Territorio", (2-53) alterar os registros das emissões dos anos na tabela GEE_Brasil de STRING para FLOAT, (54) filtrar a coluna "Emiss_o_Remo__o_Bunker" para mostrar apenas casos de emissões e filtrar a coluna "Nivel1_Setor" para mostras apenas os casos de emissões referentes a "Resíduos".
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/24390b17-718a-479f-b66c-6316c56c9736)
+
+Finalizando por inserir os dados em um Big Query. Com "Truncate Table = TRUE" e "Update Table Scheme = TRUE", que não é visível abaixo.
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/3c7442b8-080b-4742-b63c-3e9813b5e449)
+
+
+  - MVP3
+
+Foi tentado um Job simples, sem alteração nenhuma na tabela, porém também não retornou sucesso.
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/f89fda7b-c75a-41e8-83c7-1c7460730fca)
+
+A única alteração nesse caso foi a alteção manual do tipo de variável referente aos anos de emissões, de STRING para FLOAT:
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/f0463128-90ed-46e2-a345-780145db49e2)
 
 # Análise
 
