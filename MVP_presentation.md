@@ -13,11 +13,11 @@ Perguntas:
 
 
 # Busca pelos dados
-Seleção dos arquivos "ATIVIDADE_SEEG10_TODOS_SETORES_2022.10.23" e "1-SEEG10_GERAL-BR_UF_2022.10.27-FINAL-SITE"
+Seleção dos arquivos "ATIVIDADE_SEEG10_TODOS_SETORES_2022.10.23" e "1-SEEG10_GERAL-BR_UF_2022.10.27-FINAL-SITE".
 
 https://seeg.eco.br/download/
 
-Em: TABELA DE DADOS DE ATIVIDADE - BRASIL E ESTADOS (SEEG10) e DOWNLOAD DA TABELA GERAL DE DADOS - Brasil e Estados (1990-2021)
+Em: TABELA DE DADOS DE ATIVIDADE - BRASIL E ESTADOS (SEEG10) e DOWNLOAD DA TABELA GERAL DE DADOS - Brasil e Estados (1990-2021), respectivamente
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/3459ef67-f960-4ba7-9f5e-36de8fcf6c7c)
 
 Em 26/09/2023 às 21:23 o link para download da tabela selecionada no site estava quebrado.
@@ -52,19 +52,19 @@ Em "1-SEEG10_GERAL-BR_UF_2022.10.27-FINAL-SITE": Seleção da tabela "GEEBrasil"
 
 Criação de tabela individual: GEEBrasil - link para download do google drive: https://drive.google.com/file/d/1jH8rNZVKT_Hv-0GAFMrjPv9edXiPSUNo/view?usp=drive_link
 
-Abaixo, imagem da tabela supracitada após transformação em csv:
+Abaixo, imagem da tabela supracitada antes de ser transformada em csv:
 
-![image](https://github.com/Guest1537/mvp1/assets/143922275/ebb472fe-3c94-43a6-ac92-46b7a3ac2abe)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/af65c6f9-f5c3-42f1-8c30-4efea5476794)
 
 
 # Coleta
-Dados baixados para a máquina local e inseridos manualmente em um bucket (mvpgee) do Google Cloud
+Dados baixados para a máquina local e inseridos manualmente em um bucket (mvpgee) do Google Cloud:
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6de4291d-0656-4c6c-9616-afc561fc098f)
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/41f37f5a-8c27-499e-92b4-be8fbd180670)
 
-Exemplo de upload para o bucket (mvpgee) utilizando o terminal Cloud Shell
+Exemplo de upload para o bucket (mvpgee) utilizando o terminal Cloud Shell:
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/af18d1bc-0470-42c6-b335-6e3b3ee25c36)
 
@@ -76,70 +76,70 @@ Exemplo de upload para o bucket (mvpgee) utilizando o terminal Cloud Shell
 ##### Dados de Atividade BR e Dados de Atividade UF
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/84396943-097f-4597-80f5-3a2eef25eaea)
 
-Única diferença entre as tabelas BR e UF supracitadas é a coluna UF:
+Única diferença entre as tabelas BR e UF supracitadas são a coluna UF e seus respectivos valores na coluna "Valor":
 
-Setor - Setorização da atividade produtiva em "Descricao"
+Setor - Setorização da atividade produtiva em "Descricao";
 
-Ano - Ano de referência à produção referenciada em "Descricao", entre 1970 e 2021
+Ano - Ano de referência à produção referenciada em "Descricao", entre 1970 e 2021;
 
-Descricao - Atividade produtiva
+Descricao - Atividade produtiva;
 
-Unidade - Unidade de mensuração da produção vinculada à "Descricao". Ex.: Produção de Aço em toneladas -> Unidade = t
+Unidade - Unidade de mensuração da produção vinculada à "Descricao". Ex.: Produção de Aço em toneladas -> Unidade = t;
 
 UF:
 
-  - Em: Dados de Atividade BR, BR = Brasil
+  - Em: Dados de Atividade BR, BR = Brasil;
 
-  - Em: Dados de Atividade UF, UF = UF de referência da produção apresentada
+  - Em: Dados de Atividade UF, UF = UF de referência da produção apresentada;
 
-Valor - Quantidade produzida em "Unidade" para a "Descricao"
+Valor - Quantidade produzida em "Unidade" para a "Descricao":
 
-  - Em: Dados de Atividade BR, Quantidade produzida no Brasil para o "Ano"
+  - Em: Dados de Atividade BR, Quantidade produzida no Brasil para o "Ano";
 
-  - Em: Dados de Atividade UF, Quantidade produzida no "UF" referência para o "Ano"
+  - Em: Dados de Atividade UF, Quantidade produzida no "UF" referência para o "Ano";
 
-Fonte - Fonte dos dados apresentados na tupla
+Fonte - Fonte dos dados apresentados na tupla;
 
 ##### Dados Mudanças de Uso da Terra
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/d7a7f5b6-5175-4abb-976e-cbf521a37b95)
 
 
-Setor - Mudanças de Uso da Terra e Florestas
+Setor - Mudanças de Uso da Terra e Florestas;
 
-Ano - Ano de referência à Mudança de Uso da Terra e Florestas referenciada em "Valor", entre 1970 e 2021
+Ano - Ano de referência à Mudança de Uso da Terra e Florestas referenciada em "Valor", entre 1970 e 2021;
 
-Processo - Classificação entre Vegetação Nativa, Regeneração, Desmatamento e Outras Mudanças de uso da terra
+Processo - Classificação entre Vegetação Nativa, Regeneração, Desmatamento e Outras Mudanças de uso da terra;
 
-Bioma - Bioma em que ocorreu a Mudança de uso da terra
+Bioma - Bioma em que ocorreu a Mudança de uso da terra;
 
 Transicao - Caracterização da Mudança de Uso da Terra apresentando 2 dos denominadores abaixo concatenados por "--":
 
-  - "Área sem vegetação", "Floresta primária", "Floresta segundária", "Uso agropecuário", "Silvicultura", "Vegetação não florestal primária" e "Vegetação não florestal secundária"
+  - "Área sem vegetação", "Floresta primária", "Floresta segundária", "Uso agropecuário", "Silvicultura", "Vegetação não florestal primária" e "Vegetação não florestal secundária";
 
-Status_de_conservacao - Caracterização da Mudança de Uso da Terra e Floresta em dentro ou "fora de Área protegida"
+Status_de_conservacao - Caracterização da Mudança de Uso da Terra e Floresta em dentro ou "fora de Área protegida";
 
-Unidade - Hectares
+Unidade - Hectares;
 
-Valor - Quantidade de hectares que apresentaram Mudança de Uso da Terra e Floresta para o Ano e local especificado
+Valor - Quantidade de hectares que apresentaram Mudança de Uso da Terra e Floresta para o Ano e local especificado;
 
-Fonte - Fonte dos dados apresentados na tupla
+Fonte - Fonte dos dados apresentados na tupla;
 
 ##### Dados de Emissões de Gases de Efeito Estufa no Brasil
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/b385c517-a503-4e77-8f25-edfdef08e7b5)
 
-Nivel1_Setor - Especificação do setor emissor/removedor entre "Processos Industriais", "Energia", "Mudança de Uso da Terra e Florestas", "Agropecuparia" e "Resíduos"
+Nivel1_Setor - Especificação do setor emissor/removedor entre "Processos Industriais", "Energia", "Mudança de Uso da Terra e Florestas", "Agropecuparia" e "Resíduos";
 
-Nivel2, Nivel3, Nivel4, Nivel5 e Nivel6 - Especificação da atividade emissora/removedora de GEE. Caso não haja descrição específica da atividade a partir do Nivel2 o registro será NULL ou como célula vazia.
+Nivel2, Nivel3, Nivel4, Nivel5 e Nivel6 - Especificação da atividade emissora/removedora de GEE. Caso não haja descrição específica da atividade a partir do Nivel2 o registro será NULL ou como célula vazia;
 
-Emissao_Remocao_Bunker - Classificação à qual o GEE se refere entre "Emissão", "Remoção", "Emissão NCl", "Remoção NCl" e Bunker
+Emissao_Remocao_Bunker - Classificação à qual o GEE se refere entre "Emissão", "Remoção", "Emissão NCl", "Remoção NCl" e Bunker;
 
-Gas - Tipo de GEE a que se faz referência
+Gas - Tipo de GEE a que se faz referência;
 
-AtividadeEconomica - Atividade econômica à qual a emissão/remoção de GEE faz referência
+AtividadeEconomica - Atividade econômica à qual a emissão/remoção de GEE faz referência;
 
-Produto - Produto ao qual a emissão/remição de GEE faz referência
+Produto - Produto ao qual a emissão/remição de GEE faz referência;
 
-a1970-a2021 - Valor de emissão/remoção/bunker de GEE para o respectivo ano
+a1970-a2021 - Valor de emissão/remoção/bunker de GEE para o respectivo ano.
 
 
 # Carga
@@ -193,6 +193,8 @@ Foram realizadas alterações no Job entre os testes.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/3d4a8a70-c867-44bd-a60c-1536e0f7db75)
 
+![image](https://github.com/Guest1537/mvp1/assets/143922275/e8dcc0fd-3841-4da4-8005-f96ad63ea86b)
+
 A última versão tentativa (1) excluir a coluna "Territorio", (2-53) alterar os registros das emissões dos anos na tabela GEE_Brasil de STRING para FLOAT, (54) filtrar a coluna "Emiss_o_Remo__o_Bunker" para mostrar apenas casos de emissões e (55) filtrar a coluna "Nivel1_Setor" para mostras apenas os casos de emissões referentes a "Resíduos".
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/24390b17-718a-479f-b66c-6316c56c9736)
@@ -201,42 +203,41 @@ Finalizando por inserir os dados em um Big Query. Com "Truncate Table = TRUE" e 
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/3c7442b8-080b-4742-b63c-3e9813b5e449)
 
-
   - MVP3
 
 Foi tentado um Job simples, sem alteração nenhuma na tabela, porém também não retornou sucesso.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/f89fda7b-c75a-41e8-83c7-1c7460730fca)
 
-A única alteração nesse caso foi a alteção manual do tipo de variável referente aos anos de emissões, de STRING para FLOAT:
+A única alteração nesse caso foi a alteção manual do tipo de variável referente aos anos de emissões, de STRING para FLOAT, no GCS:
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/f0463128-90ed-46e2-a345-780145db49e2)
 
 
 # Análise
 
-Tendo em vista o insucesso das tentativas com o Cloud Data Fusion (maiores informações na parte de autocrítica), foram realizadas consultas através do Big Query > Espaço de trabalho SQL, com BI gerada através da]o Looker Studio.
+Tendo em vista o insucesso das tentativas com o Cloud Data Fusion (mais informações na autocrítica), foram realizadas consultas através do Big Query > Espaço de trabalho SQL, com BI gerada através da]o Looker Studio.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/ae56fce3-4424-45f2-8656-12c58822d7ba)
 
 #### SUMÁRIO CONSULTAS
-01. CONSULTA_TOPMUT_ANO - Setor e valor que apresentaram maiores emissões de cada ano referente à Mudança de Uso da Terra
+01. CONSULTA_TOPMUT_ANO - Setor e valor que apresentaram maiores emissões de cada ano referente à Mudança de Uso da Terra;
 
-02. COUNT GE Ano - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
+02. COUNT GE Ano - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada;
 
-03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
+03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro;
 
-04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
+04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN;
 
-05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG
+05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG;
 
-06. CreateViewAtBRTop1000Valores - Quais e quando os picos de produção das atividades contempladas? 
+06. CreateViewAtBRTop1000Valores - Quais e quando os picos de produção das atividades contempladas?;
 
-07. JOIN_GEEBR ATBR - JOIN entre as tabelas At_BR e At_UF, visualização da participação da produção de cada UF para cada atividade contemplada - em progresso
+07. JOIN_GEEBR ATBR - JOIN entre as tabelas At_BR e At_UF, visualização da participação da produção de cada UF para cada atividade contemplada - em progresso;
 
-08. TopProducaoPorSetorSeriaHistorica - Valores complementares aos apresentados na consulta nº 06
+08. TopProducaoPorSetorSeriaHistorica - Valores complementares aos apresentados na consulta nº 06.
 
-As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema" .
+As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema".
 
 
 ##### Qualidade dos dados
@@ -247,9 +248,9 @@ Durante as consultas abaixo foi realizada utilização de restrição para valid
 # Solução do problema
 
 
-#### 01. CONSULTA_TOPMUT_ANO
+#### 01. CONSULTA_TOPMUT_ANO:
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
 
 ##### (I) Maior emissão do período: 2019 - Amazônia - 84067630.08
 
@@ -258,26 +259,30 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044cc
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/4bca0c5a-0009-42c5-ac6d-cdf55bae09dd)
 
 
-#### 02. COUNT GE - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
+#### 02. COUNT GE - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/10370b76-37d2-462d-8174-d4e75d6dd15c)
 
 
-#### 03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
+#### 03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro:
 
-Link: ![image](https://github.com/Guest1537/mvp1/assets/143922275/8fc3c9fd-f94f-4a99-a28b-41a657bdcd2c)
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:5b17037bdc274f8286dcda7683fd8454
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/8fc3c9fd-f94f-4a99-a28b-41a657bdcd2c)
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/bb31f917-6819-4977-9628-db7b856f9cd7)
 
-Instrução 2 - criação da tabela "AnoBiomaValor" e suas colunas AAno, ABioma e AValor e definição de suas Primary Keys
+Instruções 1, 4, 6 são comandos "DROP TABLE/VIEW IF EXISTS" e sempre fazem referencia à primeira TABLE/VIEW citada em seguida.
 
-Instrução 3 - inserção manual de dados e anos na tabela
+Instrução 2 - criação da tabela "AnoBiomaValor" e suas colunas AAno, ABioma e AValor e definição de suas Primary Keys;
 
-Instrução 5 - criação de view "AnoBiomaMediaValor" agrupando anos e biomas e somando os respectivos valores
+Instrução 3 - inserção manual de dados e anos na tabela;
 
-Instrução 7 - criação de tabela "AnoBiomaMediaValor1" agrupando anos e biomas e somando os respectivos valores
+Instrução 5 - criação de view "AnoBiomaMediaValor" agrupando anos e biomas e somando os respectivos valores;
 
-Instrução 8 a 12 - seleção dos Biomas e Valores de emissões por ano
+Instrução 7 - criação de tabela "AnoBiomaMediaValor1" agrupando anos e biomas e somando os respectivos valores;
+
+Instrução 8 a 12 - seleção dos Biomas e Valores de emissões por ano.
 
 Solução usando Looker Studio:
 
@@ -288,27 +293,29 @@ Solução usando Looker Studio:
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/f6e0550b-0b1a-44d8-898a-edf04b863668)
 
 
-#### 04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
+#### 04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN:
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:b3214e251da247b1bbe03f6280642399
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:b3214e251da247b1bbe03f6280642399
 
-Criação de tabela com a seleção das colunas Ano, Setor, Descri__o, UF, Valor da produção em todo Brasil e para cada UF, para possível exploração com a participação de cada estado na produção brasileira anual de cada atividade produtiva contemplada
+Criação de tabela com a seleção das colunas Ano, Setor, Descri__o, UF, Valor da produção em todo Brasil e para cada UF, para possível exploração com a participação de cada estado na produção brasileira anual de cada atividade produtiva contemplada.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/a803f39a-0590-4d58-8cdf-cd8c45fabd15)
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/58a51d68-dc57-45f9-acdd-b928a3a6edea)
 
 
-#### 05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG
+#### 05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG:
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:b393c2f625f64bfeb9caeaa723a9cec2
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:b393c2f625f64bfeb9caeaa723a9cec2
 
-Instrução 02 - Cria tabela A1, que conterá os valores
+Instrução 01 - DROP TABLE IF EXISTS A1;
 
-Instrução 03 - Adiciona uma coluna para cada ano da série
+Instrução 02 - Cria tabela A1, que conterá os valores;
 
-Instrução 04 - Define as colunas de anos inseridas na Instrução 03 para 0
+Instrução 03 - Adiciona uma coluna para cada ano da série;
 
-Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para cada ano da série
+Instrução 04 - Define as colunas de anos inseridas na Instrução 03 para "0";
+
+Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para cada ano da série;
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/0805b161-fb5c-49c5-9243-1a7c6345d9d9)
 
@@ -323,13 +330,13 @@ Exploração possível em: https://lookerstudio.google.com/reporting/3a0837bc-a8
 
 #### 06. CreateViewAtBRTop1000Valores
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:819b0c1714904efb895ce382b618b14e
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:819b0c1714904efb895ce382b618b14e
 
-Instrução 01 - Cria view topValores com instância "ordenaValores" que ordena as variáveis, instância "selecionatopProducoes" que agrupa os registros e seleciona e ordena os maiores valores
+Instrução 01 - Cria view topValores com instância "ordenaValores" que ordena as variáveis, instância "selecionatopProducoes" que agrupa os registros e seleciona e ordena os maiores valores;
 
-Instrução 02 - seleciona os valores da view topvalores (consulta)
+Instrução 02 - seleciona os valores da view topvalores (consulta);
 
-Instrução 03 - agrupa os registros Setor e Descri____o onde Setor não é 'NULL', conta a quantidade de registros Setor e apresenta os maiores registros "Valor"
+Instrução 03 - agrupa os registros Setor e Descri____o onde Setor não é 'NULL', conta a quantidade de registros Setor e apresenta os maiores registros "Valor".
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/a2fb94ce-a636-4412-a8c8-1a98d6dcaa07)
 
@@ -340,12 +347,12 @@ Solução usando Looker Studio:
 
 Exploração possível em: https://lookerstudio.google.com/reporting/e2107ac0-e777-471a-b0b9-7f59e58da515
 
-A repetição de "Descri____o" por "Ano" na tabela da direita é explicada pela aparição de uma mesma "Descri____o" em dois diferetentes "Setor"
+A repetição de "Descri____o" por "Ano" na tabela da direita é explicada pela aparição de uma mesma "Descri____o" em dois diferetentes "Setor".
 
 
 #### 07. JOIN_GEEBR ATBR - em progresso
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c91644408d6deb7a0
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c91644408d6deb7a0
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/e3f1bb2d-c2cd-4348-a612-0a06b923954e)
 
@@ -353,11 +360,11 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c
 
 #### 08. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841b310a2d4d9cd463d
+Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841b310a2d4d9cd463d
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/0f3574dd-6e86-4833-bd25-6ca1022e87a1)
 
-Através das instâncias "seleciona" (que remove os registros null e seleciona os valores máximos de cada setor, descrição e unidade, renomeada "A") e anosRef (que seleciona todos os anos e respectivos valores renomeada "B"), se seleciona o ano, setor e unidade onde o valor da instância A é igual ao da intância B
+Através das instâncias "seleciona" (que remove os registros null e seleciona os valores máximos de cada setor, descrição e unidade, renomeada "A") e anosRef (que seleciona todos os anos e respectivos valores renomeada "B"), se seleciona o ano, setor e unidade onde o valor da instância A é igual ao da intância B.
 
 ##### (III.b) Consulta complementa dados encontrados na consulta nº 06
 
@@ -367,3 +374,5 @@ Exploração possível em: https://lookerstudio.google.com/reporting/a1ef459c-06
 
 
 # Autocrítica
+
+Penso ter cumprido os requisitos mínimos. Os
