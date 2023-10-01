@@ -1,8 +1,13 @@
-# MVP Engenharia de Dados
+![image](https://github.com/Guest1537/mvp1/assets/143922275/e9f97645-f8d9-4d8b-888b-95a5b42e7039)# MVP Engenharia de Dados
 Pedro Caleffi Barbosa
 
 # Objetivo
 Explorar e analisar dados disponíveis na base do Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa (SEEG). 
+Perguntas:
+
+Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
+
+
 
 # Busca pelos dados
 Seleção dos arquivos "ATIVIDADE_SEEG10_TODOS_SETORES_2022.10.23" e "1-SEEG10_GERAL-BR_UF_2022.10.27-FINAL-SITE"
@@ -212,19 +217,32 @@ Tendo em vista o insucesso das tentativas com o Cloud Data Fusion (maiores infor
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/ae56fce3-4424-45f2-8656-12c58822d7ba)
 
 SUMÁRIO CONSULTAS
-01. CONSULTA_TOPMUT_ANO
-02. COUNT GE Ano
-03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA
+01. CONSULTA_TOPMUT_ANO - Setor e valor que apresentaram maiores emissões de cada ano referente à Mudança de Uso da Terra
+
+02. COUNT GE Ano - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
+
+03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
+
 04. CREATE_TABLE_ATBR+UF
+
 05. CREATE_TABLE_TOP10EMISS_ANO
+
 06. CreateViewAtBRTop1000Valores
+
 07. INSERTINTO_TABLE_TOP_10_GEE_ANO
+
 08. JOIN BASICO
+
 09. JOIN_GEEBR ATBR
+
 10. Maiores emissões BR 70-21 DESC
+
 11. Potencial - a consulta não foi finalizada, então não será apresentada;
+
 12. QtdEmissoes_AnoBioma
+
 13. TOP 1000EMISSOES MUT_MAISREPRESENTATIVOS
+
 14. TopProducaoPorSetorSeriaHistorica
 
 As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema" .
@@ -236,41 +254,95 @@ Qualidade dos dados
 
 01. CONSULTA_TOPMUT_ANO
 
+Maior emissão do período: 2019 - Amazônia - 84067630.08
 
-02. COUNT GE Ano
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/4457f68a-2857-4865-b1dd-8c99cae10cdb)
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/4bca0c5a-0009-42c5-ac6d-cdf55bae09dd)
+
+
+02. COUNT GE - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/10370b76-37d2-462d-8174-d4e75d6dd15c)
 
 
 03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA
+
+Link: ![image](https://github.com/Guest1537/mvp1/assets/143922275/8fc3c9fd-f94f-4a99-a28b-41a657bdcd2c)
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/bb31f917-6819-4977-9628-db7b856f9cd7)
+
+Instrução 2 - criação da tabela "AnoBiomaValor" e suas colunas AAno, ABioma e AValor e definição de suas Primary Keys
+
+Instrução 3 - inserção manual de dados e anos na tabela
+
+Instrução 5 - criação de view "AnoBiomaMediaValor" agrupando anos e biomas e somando os respectivos valores
+
+Instrução 7 - criação de tabela "AnoBiomaMediaValor1" agrupando anos e biomas e somando os respectivos valores
+
+Instrução 8 a 12 - seleção dos Biomas e Valores de emissões por ano
+
+Solução usando Looker Studio:
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/d5813503-1fca-4523-ab79-dcd8d90aebef)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/75673929-34ba-4758-8e8b-eae58f07883b)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/5ff14874-59d4-433f-9e2f-c58c7365d5f1)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/28982820-e934-4e7e-b9b1-41d92e01ae89)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/f6e0550b-0b1a-44d8-898a-edf04b863668)
 
 
 04. CREATE_TABLE_ATBR+UF
 
 
+Link: 
+
 05. CREATE_TABLE_TOP10EMISS_ANO
 
+
+Link: 
 
 06. CreateViewAtBRTop1000Valores
 
 
+Link: 
+
 07. INSERTINTO_TABLE_TOP_10_GEE_ANO
 
+
+Link: 
 
 08. JOIN BASICO
 
 
+Link: 
+
 09. JOIN_GEEBR ATBR
 
+
+Link: 
 
 10. Maiores emissões BR 70-21 DESC
 
 
+Link: 
+
 11. Potencial - a consulta não foi finalizada, então não será apresentada;
 
+
+Link: 
 
 12. QtdEmissoes_AnoBioma
 
 
+Link: 
+
 13. TOP 1000EMISSOES MUT_MAISREPRESENTATIVOS
 
 
+Link: 
+
 14. TopProducaoPorSetorSeriaHistorica
+
+Link: 
