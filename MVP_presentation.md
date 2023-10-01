@@ -193,11 +193,11 @@ Foram realizadas alterações no Job entre os testes.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/3d4a8a70-c867-44bd-a60c-1536e0f7db75)
 
-![image](https://github.com/Guest1537/mvp1/assets/143922275/e8dcc0fd-3841-4da4-8005-f96ad63ea86b)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/24390b17-718a-479f-b66c-6316c56c9736)
 
 A última versão tentativa (1) excluir a coluna "Territorio", (2-53) alterar os registros das emissões dos anos na tabela GEE_Brasil de STRING para FLOAT, (54) filtrar a coluna "Emiss_o_Remo__o_Bunker" para mostrar apenas casos de emissões e (55) filtrar a coluna "Nivel1_Setor" para mostras apenas os casos de emissões referentes a "Resíduos".
 
-![image](https://github.com/Guest1537/mvp1/assets/143922275/24390b17-718a-479f-b66c-6316c56c9736)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/e8dcc0fd-3841-4da4-8005-f96ad63ea86b)
 
 Finalizando por inserir os dados em um Big Query. Com "Truncate Table = TRUE" e "Update Table Scheme = TRUE", que não é visível abaixo.
 
@@ -221,7 +221,7 @@ Tendo em vista o insucesso das tentativas com o Cloud Data Fusion (mais informa�
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/ae56fce3-4424-45f2-8656-12c58822d7ba)
 
 #### SUMÁRIO CONSULTAS
-01. CONSULTA_TOPMUT_ANO - Setor e valor que apresentaram maiores emissões de cada ano referente à Mudança de Uso da Terra;
+01. CONSULTA_TOPMUT_ANO - Ano e Bioma que apresentaram maiores emissões no período, com relação à Mudança de Uso da Terra;
 
 02. COUNT GE Ano - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada;
 
@@ -248,11 +248,13 @@ Durante as consultas abaixo foi realizada utilização de restrição para valid
 # Solução do problema
 
 
-#### 01. CONSULTA_TOPMUT_ANO:
+#### 01. CONSULTA_TOPMUT_ANO - Ano e Bioma que apresentaram maiores emissões no período, com relação à Mudança de Uso da Terra:
 
 Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
 
 ##### (I) Maior emissão do período: 2019 - Amazônia - 84067630.08
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/b6f0e228-7ae4-45c1-bbb7-483350ababdb)
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/4457f68a-2857-4865-b1dd-8c99cae10cdb)
 
@@ -268,11 +270,9 @@ Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:ad
 
 Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:5b17037bdc274f8286dcda7683fd8454
 
-![image](https://github.com/Guest1537/mvp1/assets/143922275/8fc3c9fd-f94f-4a99-a28b-41a657bdcd2c)
-
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/bb31f917-6819-4977-9628-db7b856f9cd7)
 
-Instruções 1, 4, 6 são comandos "DROP TABLE/VIEW IF EXISTS" e sempre fazem referencia à primeira TABLE/VIEW citada em seguida.
+Instruções 1, 4 e 6 são comandos "DROP TABLE/VIEW IF EXISTS" e sempre fazem referencia à primeira TABLE/VIEW citada em seguida.
 
 Instrução 2 - criação da tabela "AnoBiomaValor" e suas colunas AAno, ABioma e AValor e definição de suas Primary Keys;
 
@@ -355,7 +355,6 @@ A repetição de "Descri____o" por "Ano" na tabela da direita é explicada pela 
 Link SQL Workspace: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c91644408d6deb7a0
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/e3f1bb2d-c2cd-4348-a612-0a06b923954e)
-
 
 
 #### 08. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
