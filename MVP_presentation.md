@@ -223,7 +223,7 @@ SUMÁRIO CONSULTAS
 
 03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
 
-04. CREATE_TABLE_ATBR+UF
+04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
 
 05. CREATE_TABLE_TOP10EMISS_ANO
 
@@ -295,8 +295,12 @@ Solução usando Looker Studio:
 
 04. CREATE_TABLE_ATBR+UF
 
+Criação de tabela com a seleção das colunas Ano, Setor, Descri__o, UF, Valor da produção em todo Brasil e para cada UF, para possível exploração com a participação de cada estado na produção brasileira anual de cada atividade produtiva contemplada
 
-Link: 
+![image](https://github.com/Guest1537/mvp1/assets/143922275/a803f39a-0590-4d58-8cdf-cd8c45fabd15)
+![image](https://github.com/Guest1537/mvp1/assets/143922275/58a51d68-dc57-45f9-acdd-b928a3a6edea)
+
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:b3214e251da247b1bbe03f6280642399
 
 05. CREATE_TABLE_TOP10EMISS_ANO
 
