@@ -6,7 +6,7 @@ Explorar e analisar dados disponíveis na base do Sistema de Estimativas de Emis
 Perguntas:
 
 Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
-
+Quais são as principais atividades emissoras de GEEs no Brasil durante o período?
 
 
 # Busca pelos dados
@@ -225,38 +225,29 @@ SUMÁRIO CONSULTAS
 
 04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
 
-05. CREATE_TABLE_TOP10EMISS_ANO
+05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG
 
-06. CreateViewAtBRTop1000Valores
+06. CreateViewAtBRTop1000Valores - Quais e quando os picos de produção das atividades contempladas? 
 
-07. INSERTINTO_TABLE_TOP_10_GEE_ANO
+07. JOIN_GEEBR ATBR - JOIN entre as tabelas At_BR e At_UF, visualização da participação da produção de cada UF para cada atividade contemplada - em progresso
 
-08. JOIN BASICO
-
-09. JOIN_GEEBR ATBR
-
-10. Maiores emissões BR 70-21 DESC
-
-11. Potencial - a consulta não foi finalizada, então não será apresentada;
-
-12. QtdEmissoes_AnoBioma
-
-13. TOP 1000EMISSOES MUT_MAISREPRESENTATIVOS
-
-14. TopProducaoPorSetorSeriaHistorica
+08. TopProducaoPorSetorSeriaHistorica
 
 As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema" .
 
 
 Qualidade dos dados
 
+Durante as consultas abaixo foi realizado CHECK verificando a integridade dos dados gerados nas tabelas produzidas.
+
 # Solução do problema
+
 
 01. CONSULTA_TOPMUT_ANO
 
-Maior emissão do período: 2019 - Amazônia - 84067630.08
-
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
+
+Maior emissão do período: 2019 - Amazônia - 84067630.08
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/4457f68a-2857-4865-b1dd-8c99cae10cdb)
 
@@ -268,7 +259,7 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044cc
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/10370b76-37d2-462d-8174-d4e75d6dd15c)
 
 
-03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA
+03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
 
 Link: ![image](https://github.com/Guest1537/mvp1/assets/143922275/8fc3c9fd-f94f-4a99-a28b-41a657bdcd2c)
 
@@ -293,60 +284,81 @@ Solução usando Looker Studio:
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/f6e0550b-0b1a-44d8-898a-edf04b863668)
 
 
-04. CREATE_TABLE_ATBR+UF
+04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
+
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:b3214e251da247b1bbe03f6280642399
 
 Criação de tabela com a seleção das colunas Ano, Setor, Descri__o, UF, Valor da produção em todo Brasil e para cada UF, para possível exploração com a participação de cada estado na produção brasileira anual de cada atividade produtiva contemplada
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/a803f39a-0590-4d58-8cdf-cd8c45fabd15)
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/58a51d68-dc57-45f9-acdd-b928a3a6edea)
 
-Link: https://console.cloud.google.com/bigquery?sq=162859265101:b3214e251da247b1bbe03f6280642399
 
-05. CREATE_TABLE_TOP10EMISS_ANO
+05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG
 
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:b393c2f625f64bfeb9caeaa723a9cec2
 
-Link: 
+Instrução 02 - Cria tabela A1, que conterá os valores
+
+Instrução 03 - Adiciona uma coluna para cada ano da série
+
+Instrução 04 - Define as colunas de anos inseridas na Instrução 03 para 0
+
+Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para cada ano da série
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/0805b161-fb5c-49c5-9243-1a7c6345d9d9)
+
+Solução usando Looker Studio:
+
+Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+![image](https://github.com/Guest1537/mvp1/assets/143922275/6bb65e01-bf5d-4e7a-968e-6e4b08fc24fe)
+
+Exploração possível em: https://lookerstudio.google.com/reporting/3a0837bc-a8ec-4744-b821-a29bef1beee5
+
 
 06. CreateViewAtBRTop1000Valores
 
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:819b0c1714904efb895ce382b618b14e
 
-Link: 
+Instrução 01 - Cria view topValores com instância "ordenaValores" que ordena as variáveis, instância "selecionatopProducoes" que agrupa os registros e seleciona e ordena os maiores valores
 
-07. INSERTINTO_TABLE_TOP_10_GEE_ANO
+Instrução 02 - seleciona os valores da view topvalores (consulta)
 
+Instrução 03 - agrupa os registros Setor e Descri____o onde Setor não é 'NULL', conta a quantidade de registros Setor e apresenta os maiores registros "Valor"
 
-Link: 
+![image](https://github.com/Guest1537/mvp1/assets/143922275/a2fb94ce-a636-4412-a8c8-1a98d6dcaa07)
 
-08. JOIN BASICO
+Solução usando Looker Studio:
 
+Quais e quando os picos de produção das atividades contempladas? 
+![image](https://github.com/Guest1537/mvp1/assets/143922275/518b995c-a322-4c52-91a4-55c9ad80cd91)
 
-Link: 
+Exploração possível em: https://lookerstudio.google.com/reporting/e2107ac0-e777-471a-b0b9-7f59e58da515
 
-09. JOIN_GEEBR ATBR
-
-
-Link: 
-
-10. Maiores emissões BR 70-21 DESC
-
-
-Link: 
-
-11. Potencial - a consulta não foi finalizada, então não será apresentada;
+A repetição de "Descri____o" por "Ano" na tabela da direita é explicada pela aparição de uma mesma "Descri____o" em dois diferetentes "Setor"
 
 
-Link: 
+07. JOIN_GEEBR ATBR - em progresso
 
-12. QtdEmissoes_AnoBioma
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c91644408d6deb7a0
 
-
-Link: 
-
-13. TOP 1000EMISSOES MUT_MAISREPRESENTATIVOS
+![image](https://github.com/Guest1537/mvp1/assets/143922275/e3f1bb2d-c2cd-4348-a612-0a06b923954e)
 
 
-Link: 
 
-14. TopProducaoPorSetorSeriaHistorica
+06. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
 
-Link: 
+Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841b310a2d4d9cd463d
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/0f3574dd-6e86-4833-bd25-6ca1022e87a1)
+
+Através das instâncias "seleciona" (que remove os registros null e seleciona os valores máximos de cada setor, descrição e unidade, renomeada "A") e anosRef (que seleciona todos os anos e respectivos valores renomeada "B"), se seleciona o ano, setor e unidade onde o valor da instância A é igual ao da intância B
+
+Consulta complementa dados encontrados na consulta nº
+
+Solução usando Looker Studio: ![image](https://github.com/Guest1537/mvp1/assets/143922275/bd4fa655-4053-4b56-9220-8a720cff24ea)
+
+Exploração possível em: https://lookerstudio.google.com/reporting/a1ef459c-0609-49df-97a9-4a8f987ae4d7
+
+
+# Autocrítica
