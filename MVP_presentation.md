@@ -1,4 +1,4 @@
-![image](https://github.com/Guest1537/mvp1/assets/143922275/e9f97645-f8d9-4d8b-888b-95a5b42e7039)# MVP Engenharia de Dados
+# MVP Engenharia de Dados
 Pedro Caleffi Barbosa
 
 # Objetivo
