@@ -6,7 +6,8 @@ Explorar e analisar dados disponíveis na base do Sistema de Estimativas de Emis
 Perguntas:
 
 Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
-Quais são as principais atividades emissoras de GEEs no Brasil durante o período?
+Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
 
 
 # Busca pelos dados
@@ -231,7 +232,7 @@ SUMÁRIO CONSULTAS
 
 07. JOIN_GEEBR ATBR - JOIN entre as tabelas At_BR e At_UF, visualização da participação da produção de cada UF para cada atividade contemplada - em progresso
 
-08. TopProducaoPorSetorSeriaHistorica
+08. TopProducaoPorSetorSeriaHistorica - Valores complementares aos apresentados na consulta nº 06
 
 As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema" .
 
@@ -311,6 +312,7 @@ Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para ca
 Solução usando Looker Studio:
 
 Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6bb65e01-bf5d-4e7a-968e-6e4b08fc24fe)
 
 Exploração possível em: https://lookerstudio.google.com/reporting/3a0837bc-a8ec-4744-b821-a29bef1beee5
@@ -346,7 +348,7 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c
 
 
 
-06. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
+08. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841b310a2d4d9cd463d
 
@@ -354,7 +356,7 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841
 
 Através das instâncias "seleciona" (que remove os registros null e seleciona os valores máximos de cada setor, descrição e unidade, renomeada "A") e anosRef (que seleciona todos os anos e respectivos valores renomeada "B"), se seleciona o ano, setor e unidade onde o valor da instância A é igual ao da intância B
 
-Consulta complementa dados encontrados na consulta nº
+Consulta complementa dados encontrados na consulta nº 06
 
 Solução usando Looker Studio: ![image](https://github.com/Guest1537/mvp1/assets/143922275/bd4fa655-4053-4b56-9220-8a720cff24ea)
 
