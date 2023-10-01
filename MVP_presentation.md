@@ -375,4 +375,20 @@ Exploração possível em: https://lookerstudio.google.com/reporting/a1ef459c-06
 
 # Autocrítica
 
-Penso ter cumprido os requisitos mínimos. Os
+Acredita-se terem sido apresentados ao menos grande maioria dos requisitos mínimos para o modelo de MVP proposto. As perguntas delimitadas no Objetivo foram respondidas, os dados foram coletados e modelados e sua carga foi feita para um SGBD, onde foram realizadas as consultas.
+
+Muitos pontos são necessários de melhora. A descrição dos dados e a nomenclatura utilizada devem ser mais representativos do que cada etapa/entidade realiza, uma tabela de nome A1 é inadimissível. Há necessidade de maiores verificações sobre a qualidade de dados. Os códigos utilizados necessitam de refino e otimização. A modelagem do banco de dados não foi apresentada. 
+
+Sobre dificuldades encontradas: o trabalho foi iniciado em agosto porém teve que ser repensado cinco vezes e refeito do começo (após início da escritura dos códigos) ao menos duas vezes. Os desafios encontrados foram sobrepujados, porém com perda de qualidade no trabalho final. A multiplicidade de ferramentas disponíveis para uso e implementação visando o objetivo contribuiu para confusão e atraso no desenvolvimento do projeto.
+
+A ideia inicial era fazer a correlação entre a evolução da emissão de gases de efeito estufa no Brasil e o avanço dos índices de desenvolvimento sustentável brasileiros calculado pelo IDCS (https://idsc.cidadessustentaveis.org.br/), por Município, porém minha velocidade e aprendizado e implementação não foram suficientes para realizá-lo. No meio tempo este trabalho me inspirou a calcular a correlação entre o desenvolvimento do PIB do agronegócio brasileiro e o avanço das emissões de GEE do Brasil entre 1990 e 2021:
+![image](https://github.com/Guest1537/mvp1/assets/143922275/d6ab13ec-4fdf-416b-8921-28eabfa752cd)
+
+De maneira geral, o trabalho ficou, ao mínimo, aceitável, mesmo que longe de perfeito.
+
+Abaixo evidencio algumas imagens com desenvolvimentos perdidos ao longo do trabalho:
+![image](https://github.com/Guest1537/mvp1/assets/143922275/b6049427-975a-455d-a236-383321c333c6)
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/16936109-1e7e-455f-9fc2-b13f8d746790)
+
+![image](https://github.com/Guest1537/mvp1/assets/143922275/fff312e2-d4f0-4646-a9ec-e8852acc0c72)
