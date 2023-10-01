@@ -9,7 +9,7 @@ Perguntas:
 
 (II) Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
 
-(III) Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
+(III, a-b) Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
 
 
 # Busca pelos dados
@@ -251,7 +251,7 @@ Durante as consultas abaixo foi realizada utilização de restrição para valid
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
 
-Maior emissão do período: 2019 - Amazônia - 84067630.08
+##### (I) Maior emissão do período: 2019 - Amazônia - 84067630.08
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/4457f68a-2857-4865-b1dd-8c99cae10cdb)
 
@@ -314,7 +314,7 @@ Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para ca
 
 Solução usando Looker Studio:
 
-##### (I) Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+##### (II) Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6bb65e01-bf5d-4e7a-968e-6e4b08fc24fe)
 
@@ -335,7 +335,7 @@ Instrução 03 - agrupa os registros Setor e Descri____o onde Setor não é 'NUL
 
 Solução usando Looker Studio:
 
-##### Quais e quando os picos de produção das atividades contempladas? 
+##### (III.a) Quais e quando os picos de produção das atividades contempladas? 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/518b995c-a322-4c52-91a4-55c9ad80cd91)
 
 Exploração possível em: https://lookerstudio.google.com/reporting/e2107ac0-e777-471a-b0b9-7f59e58da515
@@ -359,7 +359,7 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841
 
 Através das instâncias "seleciona" (que remove os registros null e seleciona os valores máximos de cada setor, descrição e unidade, renomeada "A") e anosRef (que seleciona todos os anos e respectivos valores renomeada "B"), se seleciona o ano, setor e unidade onde o valor da instância A é igual ao da intância B
 
-##### Consulta complementa dados encontrados na consulta nº 06 (Pergunta III)
+##### (III.b) Consulta complementa dados encontrados na consulta nº 06
 
 Solução usando Looker Studio: ![image](https://github.com/Guest1537/mvp1/assets/143922275/bd4fa655-4053-4b56-9220-8a720cff24ea)
 
