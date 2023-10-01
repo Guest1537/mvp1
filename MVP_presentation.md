@@ -5,11 +5,11 @@ Pedro Caleffi Barbosa
 Explorar e analisar dados disponíveis na base do Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa (SEEG). 
 Perguntas:
 
-##### Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
+(I) Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
 
-##### Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+(II) Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
 
-##### Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
+(III) Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
 
 
 # Busca pelos dados
@@ -73,7 +73,7 @@ Exemplo de upload para o bucket (mvpgee) utilizando o terminal Cloud Shell
 
 # Modelagem
 
-Dados de Atividade BR e Dados de Atividade UF
+##### Dados de Atividade BR e Dados de Atividade UF
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/84396943-097f-4597-80f5-3a2eef25eaea)
 
 Única diferença entre as tabelas BR e UF supracitadas é a coluna UF:
@@ -100,7 +100,7 @@ Valor - Quantidade produzida em "Unidade" para a "Descricao"
 
 Fonte - Fonte dos dados apresentados na tupla
 
-Dados Mudanças de Uso da Terra
+##### Dados Mudanças de Uso da Terra
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/d7a7f5b6-5175-4abb-976e-cbf521a37b95)
 
 
@@ -124,7 +124,7 @@ Valor - Quantidade de hectares que apresentaram Mudança de Uso da Terra e Flore
 
 Fonte - Fonte dos dados apresentados na tupla
 
-Dados de Emissões de Gases de Efeito Estufa no Brasil
+##### Dados de Emissões de Gases de Efeito Estufa no Brasil
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/b385c517-a503-4e77-8f25-edfdef08e7b5)
 
 Nivel1_Setor - Especificação do setor emissor/removedor entre "Processos Industriais", "Energia", "Mudança de Uso da Terra e Florestas", "Agropecuparia" e "Resíduos"
@@ -177,11 +177,11 @@ GE_UF - Foi selecionada amostra de outra tabela disponível pelo SEEG, referente
 
 Para algumas tabelas foi necessário editar os dados manualmente devido à leitura dos valores de emissão de GEEs dos respectivos anos serem em STRING em vez de NUMERIC ou FLOAT64. Foi utilizada a seção "Esquema" para tal.
 
-Foi criada a "Instancia1"
+##### Foi criada a "Instancia1"
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/b45b6e18-fb90-4efa-80ce-f07a15ca4a94)
 
-Foram testados alguns Jobs para execução, mas sem sucesso.
+##### Foram testados alguns Jobs para execução, mas sem sucesso.
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/fb7feb9c-07f7-4b19-b206-86e0c9f0a386)
 
@@ -219,7 +219,7 @@ Tendo em vista o insucesso das tentativas com o Cloud Data Fusion (maiores infor
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/ae56fce3-4424-45f2-8656-12c58822d7ba)
 
-SUMÁRIO CONSULTAS
+#### SUMÁRIO CONSULTAS
 01. CONSULTA_TOPMUT_ANO - Setor e valor que apresentaram maiores emissões de cada ano referente à Mudança de Uso da Terra
 
 02. COUNT GE Ano - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
@@ -239,14 +239,15 @@ SUMÁRIO CONSULTAS
 As consultas supracitadas serão tratadas por sua respectiva numeração na seção "Solução do problema" .
 
 
-Qualidade dos dados
+##### Qualidade dos dados
 
-Durante as consultas abaixo foi realizado CHECK verificando a integridade dos dados gerados nas tabelas produzidas.
+Durante as consultas abaixo foi realizada utilização de restrição para validar e verificar a integridade dos dados gerados nos dados produzidos como resultado da consulta 06, onde se seleciona apenas tuplas onde top1000Valores.Setor <> 'NULL'.
+
 
 # Solução do problema
 
 
-01. CONSULTA_TOPMUT_ANO
+#### 01. CONSULTA_TOPMUT_ANO
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:ad6629fb012044ccaf8ab7cef5faf02a
 
@@ -257,12 +258,12 @@ Maior emissão do período: 2019 - Amazônia - 84067630.08
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/4bca0c5a-0009-42c5-ac6d-cdf55bae09dd)
 
 
-02. COUNT GE - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
+#### 02. COUNT GE - Criação de tabela para análise de dados incompletos (GE_UF), não será apresentada
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/10370b76-37d2-462d-8174-d4e75d6dd15c)
 
 
-03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
+#### 03. CREATETABLE_INSERT_VIEW_TOP_EMISS_ANO_BIOMA - Verificação sobre a evolução das emissões anuais de cada bioma brasileiro 
 
 Link: ![image](https://github.com/Guest1537/mvp1/assets/143922275/8fc3c9fd-f94f-4a99-a28b-41a657bdcd2c)
 
@@ -287,7 +288,7 @@ Solução usando Looker Studio:
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/f6e0550b-0b1a-44d8-898a-edf04b863668)
 
 
-04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
+#### 04. CREATE_TABLE_ATBR+UF - Criação básica de tabela por JOIN
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:b3214e251da247b1bbe03f6280642399
 
@@ -297,7 +298,7 @@ Criação de tabela com a seleção das colunas Ano, Setor, Descri__o, UF, Valor
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/58a51d68-dc57-45f9-acdd-b928a3a6edea)
 
 
-05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG
+#### 05. CREATE_TABLE_TOP10EMISS_ANO - Top 10 emissões de GEE do Brasil 1970-2021, segundo estimativas do SEEG
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:b393c2f625f64bfeb9caeaa723a9cec2
 
@@ -313,14 +314,14 @@ Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para ca
 
 Solução usando Looker Studio:
 
-##### Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+##### (I) Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6bb65e01-bf5d-4e7a-968e-6e4b08fc24fe)
 
 Exploração possível em: https://lookerstudio.google.com/reporting/3a0837bc-a8ec-4744-b821-a29bef1beee5
 
 
-06. CreateViewAtBRTop1000Valores
+#### 06. CreateViewAtBRTop1000Valores
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:819b0c1714904efb895ce382b618b14e
 
@@ -334,7 +335,7 @@ Instrução 03 - agrupa os registros Setor e Descri____o onde Setor não é 'NUL
 
 Solução usando Looker Studio:
 
-Quais e quando os picos de produção das atividades contempladas? 
+##### Quais e quando os picos de produção das atividades contempladas? 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/518b995c-a322-4c52-91a4-55c9ad80cd91)
 
 Exploração possível em: https://lookerstudio.google.com/reporting/e2107ac0-e777-471a-b0b9-7f59e58da515
@@ -342,7 +343,7 @@ Exploração possível em: https://lookerstudio.google.com/reporting/e2107ac0-e7
 A repetição de "Descri____o" por "Ano" na tabela da direita é explicada pela aparição de uma mesma "Descri____o" em dois diferetentes "Setor"
 
 
-07. JOIN_GEEBR ATBR - em progresso
+#### 07. JOIN_GEEBR ATBR - em progresso
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c91644408d6deb7a0
 
@@ -350,7 +351,7 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:5daa668006b9445c
 
 
 
-08. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
+#### 08. TopProducaoPorSetorSeriaHistorica - valores das maiores produções por setor 1990-2021
 
 Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841b310a2d4d9cd463d
 
@@ -358,7 +359,7 @@ Link: https://console.cloud.google.com/bigquery?sq=162859265101:f84c5d6a70614841
 
 Através das instâncias "seleciona" (que remove os registros null e seleciona os valores máximos de cada setor, descrição e unidade, renomeada "A") e anosRef (que seleciona todos os anos e respectivos valores renomeada "B"), se seleciona o ano, setor e unidade onde o valor da instância A é igual ao da intância B
 
-Consulta complementa dados encontrados na consulta nº 06
+##### Consulta complementa dados encontrados na consulta nº 06 (Pergunta III)
 
 Solução usando Looker Studio: ![image](https://github.com/Guest1537/mvp1/assets/143922275/bd4fa655-4053-4b56-9220-8a720cff24ea)
 
