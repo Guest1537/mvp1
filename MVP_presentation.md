@@ -1,15 +1,15 @@
-## MVP Engenharia de Dados
+# MVP Engenharia de Dados
 Pedro Caleffi Barbosa
 
 # Objetivo
 Explorar e analisar dados disponíveis na base do Sistema de Estimativas de Emissões e Remoções de Gases de Efeito Estufa (SEEG). 
 Perguntas:
 
-Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
+##### Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
 
-Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+##### Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
 
-Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
+##### Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
 
 
 # Busca pelos dados
@@ -313,7 +313,7 @@ Instrução 05 a 55 - Seleciona as 10 maiores valores de emissão de GEE para ca
 
 Solução usando Looker Studio:
 
-Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+##### Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
 
 ![image](https://github.com/Guest1537/mvp1/assets/143922275/6bb65e01-bf5d-4e7a-968e-6e4b08fc24fe)
 
