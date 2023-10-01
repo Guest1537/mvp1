@@ -1,4 +1,4 @@
-# MVP Engenharia de Dados
+#2 MVP Engenharia de Dados
 Pedro Caleffi Barbosa
 
 # Objetivo
@@ -6,7 +6,9 @@ Explorar e analisar dados disponíveis na base do Sistema de Estimativas de Emis
 Perguntas:
 
 Qual o maior emissor de gases de efeito estufa referentes à mudança de uso do solo e florestas?
+
 Quais são as 10 principais atividades mais emissoras de GEE no Brasil durante o período?
+
 Quais foram e quando ocorreram os picos de produção das atividades contempladas na base de dados?
 
 
